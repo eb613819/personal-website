@@ -1,0 +1,78 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  position: relative;
+}
+
+.project-card {
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background-color: #343a40;
+}
+
+.project-card.expanded {
+  grid-column: 1 / -1;      
+  z-index: 10;               
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.card-header h3, .card-header p { margin: 0; }
+
+.type-label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.type-label .type {
+  background-color: rgba(255,255,255,0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.tags {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.tag {
+  display: inline-block;
+  background-color: rgba(255,255,255,0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+}
+
+.card-description {
+  margin-top: 0.5rem;
+  background-color: rgba(255,255,255,0.1);
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.links a {
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+}
