@@ -9,15 +9,14 @@
       <h3>{{ exp.role }}</h3>
       <p><strong>{{ exp.organization }}</strong></p>
       <p>{{ exp.startDate }} to {{ exp.endDate }}</p>
+      <div class="card-description" *ngIf="isExpanded(exp)">
+        <ul>
+          <li *ngFor="let d of exp.description">{{ d }}</li>
+        </ul>
+      </div>
       <div class="tags">
         <span *ngFor="let t of exp.tags" class="tag">{{ t }}</span>
       </div>
-    </div>
-
-    <div class="card-description" *ngIf="isExpanded(exp)">
-      <ul>
-        <li *ngFor="let d of exp.description">{{ d }}</li>
-      </ul>
     </div>
   </div>
 </div>

@@ -1,61 +1,103 @@
+/* ---------- Experience Cards ---------- */
 .experience-card {
   width: 100%;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  transition: all 0.3s ease;
-  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-md);
+  color: var(--text-primary);
   box-sizing: border-box;
 }
 
-.experience-card.education {
-  background-color: #2a2a2a;
+.experience-card:hover {
+  transform: translateY(-3px);
+  transform: translateX(-3px);
+  box-shadow: var(--shadow-lg);
 }
 
-.experience-card.job {
-  background-color: #007acc;
+/* ---------- Type Colors ---------- */
+.experience-card.job .type-label {
+  background-color: rgba(253, 126, 20, 0.2); /* amber */
+  color: #fd7e14;
 }
 
-.experience-card.research {
-  background-color: #28a745;
+.experience-card.research .type-label {
+  background-color: rgba(16, 185, 129, 0.2); /* green */
+  color: #10b981;
 }
 
-.experience-card.teaching {
-  background-color: #fd7e14;
+.experience-card.teaching .type-label {
+  background-color: rgba(117, 67, 235, 0.2); /* purple */
+  color: #8b5cf6;
 }
 
-.card-header h3, .card-header p {
+.experience-card.education .type-label {
+  background-color: rgba(239, 68, 68, 0.2); /* light red/pink background */
+  color: #ef4444; /* text red */
+}
+
+/* ---------- Card Header ---------- */
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.card-header h3 {
   margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
+.card-header p {
+  margin: 0.1rem 0;
+  color: var(--text-secondary);
+}
+
+/* ---------- Type Label ---------- */
+.type-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  width: fit-content;
+  margin-bottom: 0.3rem;
+}
+
+/* ---------- Tags ---------- */
 .tags {
   margin-top: 0.5rem;
 }
 
 .tag {
   display: inline-block;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(128, 128, 128, 0.45);
   padding: 0.2rem 0.5rem;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   margin-right: 0.3rem;
   font-size: 0.8rem;
+  color: var(--text-secondary);
 }
 
+/* ---------- Card Description ---------- */
 .card-description {
   margin-top: 0.5rem;
-  background-color: rgba(255,255,255,0.1);
-  padding: 0.5rem;
-  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(0, 0, 0, 0.2); 
+  color: var(--text-secondary);
 }
 
-.type-label {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: bold;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  text-transform: uppercase;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin-bottom: 0.3rem;
+.card-description ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.card-description li {
+  margin-bottom: 0.5rem;
 }
