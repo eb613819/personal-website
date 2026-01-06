@@ -1,21 +1,23 @@
-<div *ngFor="let exp of experiences" 
-     class="experience-card" 
-     [ngClass]="exp.type"
-     (click)="toggleCard(exp)">
+<div class="page">
+  <div *ngFor="let exp of experiences" 
+      class="experience-card" 
+      [ngClass]="exp.type"
+      (click)="toggleCard(exp)">
 
-  <div class="card-header">
-    <div class="type-label">{{ exp.type | titlecase }}</div>
-    <h3>{{ exp.role }}</h3>
-    <p><strong>{{ exp.organization }}</strong></p>
-    <p>{{ exp.startDate }} to {{ exp.endDate }}</p>
-    <div class="tags">
-      <span *ngFor="let t of exp.tags" class="tag">{{ t }}</span>
+    <div class="card-header">
+      <div class="type-label">{{ exp.type | titlecase }}</div>
+      <h3>{{ exp.role }}</h3>
+      <p><strong>{{ exp.organization }}</strong></p>
+      <p>{{ exp.startDate }} to {{ exp.endDate }}</p>
+      <div class="tags">
+        <span *ngFor="let t of exp.tags" class="tag">{{ t }}</span>
+      </div>
     </div>
-  </div>
 
-  <div class="card-description" *ngIf="isExpanded(exp)">
-    <ul>
-      <li *ngFor="let d of exp.description">{{ d }}</li>
-    </ul>
+    <div class="card-description" *ngIf="isExpanded(exp)">
+      <ul>
+        <li *ngFor="let d of exp.description">{{ d }}</li>
+      </ul>
+    </div>
   </div>
 </div>
