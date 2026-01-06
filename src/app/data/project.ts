@@ -5,10 +5,16 @@ export type ProjectType =
     | 'Software / Web'
     | 'Other / Experimental';
 
+export type ProjectStatus =
+    | 'Completed'
+    | 'In Progress'
+    | 'Not Started'
+
 export interface Project {
   title: string;
   types: ProjectType[];
-  completionDate: string;
+  status: ProjectStatus;
+  completionDate?: string;
   description: string[];
   tags?: string[];
   imageUrl?: string;
@@ -19,7 +25,7 @@ export const projects: Project[] = [
   {
     title: 'Personal Portfolio Website',
     types: ['Software / Web'],
-    completionDate: '2026-01-15',
+    status: 'In Progress',
     description: [
       'Built using Angular standalone components with TypeScript and Node.js.',
       'Includes dynamic Experience and Projects pages with expandable cards.',
@@ -33,7 +39,7 @@ export const projects: Project[] = [
   {
     title: 'NAS Build',
     types: ['Hardware / IT'],
-    completionDate: '2026-04-01',
+    status: 'In Progress',
     description: [
       'Assembled a home NAS with multiple drives for backups and media storage.',
       'Configured RAID, shared network access, and automated backups.',
@@ -44,7 +50,8 @@ export const projects: Project[] = [
   {
     title: 'Magic Mirror Build',
     types: ['Electronics / Raspberry Pi', 'Hardware / IT'],
-    completionDate: '2025-03-15',
+    status: 'Completed',
+    completionDate: '03-15-2025',
     description: [
       'Built a smart mirror using an old TV, Raspberry Pi, poster frame, sheet of glass, and reflective film.',
       'Configured the Magic Mirror software for displaying calendar, weather, and news.',
@@ -55,5 +62,15 @@ export const projects: Project[] = [
     links: [
       { label: 'Magic Mirror GitHub', url: 'https://github.com/MichMich/MagicMirror' }
     ]
+  },
+  {
+    title: 'Insulin Holder',
+    types: ['Electronics / Raspberry Pi', '3D Print / Maker'],
+    status: 'Not Started',
+    description: [
+      'Build an insulin vial holder for the fridge.',
+      'Include a temp monitor that alerts if the temp is outside range.'
+    ],
+    tags: ['Raspberry Pi', 'Temperature Monitor', 'Smart Home', 'Fridge']
   }
 ];

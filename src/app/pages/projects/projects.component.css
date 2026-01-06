@@ -76,3 +76,27 @@
   text-decoration: underline;
   font-weight: bold;
 }
+
+.project-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-top: 0.25rem;
+}
+
+.status {
+  font-weight: 600;
+}
+
+.status.completed {
+  color: #4caf50;
+}
+
+.status.in-progress {
+  color: #ff9800;
+}
+
+.status.not-started {
+  color: #ff2121;
+}

@@ -9,7 +9,11 @@
         <span *ngFor="let t of proj.types" class="type">{{ t }}</span>
       </div>
       <h3>{{ proj.title }}</h3>
-      <p>{{ proj.completionDate }}</p>
+      <div class="project-meta">
+        <span class="status" [ngClass]="proj.status.toLowerCase().replace(' ', '-')">
+            {{ proj.status }}
+        </span>
+      </div>
       <div class="tags">
         <span *ngFor="let t of proj.tags" class="tag">{{ t }}</span>
       </div>

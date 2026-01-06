@@ -15,8 +15,24 @@ export class ProjectsComponent {
 
   constructor() {
     this.projects = projects.sort((a, b) => {
-      const getDate = (d: string) => new Date(d);
-      return getDate(b.completionDate).getTime() - getDate(a.completionDate).getTime();
+      const statusOrder = (s: Project['status']) => {
+        if (s === 'Completed') return 0;
+        if (s === 'In Progress') return 1;
+        return 2; //Not Started
+      };
+
+      const statusDiff = statusOrder(a.status) - statusOrder(b.status);
+      if (statusDiff !== 0) return statusDiff;
+
+      if (a.status === 'Completed' && b.status === 'Completed') {
+        if (!a.completionDate || !b.completionDate) return 0;
+        return (
+          new Date(b.completionDate).getTime() -
+          new Date(a.completionDate).getTime()
+        );
+      }
+
+      return 0;
     });
   }
 
