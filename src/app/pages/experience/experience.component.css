@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+.experience-card.education {
+  background-color: #2a2a2a;
+}
+
 .experience-card.job {
   background-color: #007acc;
 }

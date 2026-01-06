@@ -1,4 +1,4 @@
-export type ExperienceType = 'job' | 'research' | 'teaching';
+export type ExperienceType = 'job' | 'research' | 'teaching' | 'education';
 
 export interface Experience {
     role: string;
@@ -11,6 +11,16 @@ export interface Experience {
 }
 
 export const experiences: Experience[] = [
+    {
+      role: 'M.S. in Computer Science',
+      organization: 'Ohio University',
+      startDate: 'August 2024',
+      endDate: 'Present',
+      description: [
+        'GPA: 4.0/4.0'
+      ],
+      type: 'education'
+    },
     {
         role: 'Graduate Research Assistant',
         organization: 'Ohio University - Dr. Shawn Ostermann & Ilya Kogan',
@@ -79,5 +89,27 @@ export const experiences: Experience[] = [
     ],
     tags: ['Teaching', 'Python', 'CS Education'],
     type: 'teaching'
+  },
+  {
+    role: 'B.S. in Computer Science',
+    organization: 'Ohio University',
+    startDate: 'August 2020',
+    endDate: 'August 2024',
+    description: [
+      'GPA: 3.775/4.0',
+      'Magna Cum Laude'
+    ],
+    type: 'education'
+  },
+  {
+    role: 'Valedictorian',
+    organization: 'Western Brown High School',
+    startDate: 'August 2016',
+    endDate: 'August 2020',
+    description: [
+      'GPA: 4.0/4.0',
+      'STEM Honors Diploma'
+    ],
+    type: 'education'
   }
 ]
