@@ -22,20 +22,44 @@ export const experiences: Experience[] = [
       type: 'education'
     },
     {
-        role: 'Graduate Research Assistant',
-        organization: 'Ohio University - Dr. Shawn Ostermann & Ilya Kogan',
-        startDate: 'May 2024',
-        endDate: 'Present',
-        description: [
-            'Leading integration of Backstage (internal developer portal) into the university’s cloud-native Kubernetes platform, focusing on scalability, reliability, and developer workflow improvements.',
-            'Implemented Azure AD SSO, Microsoft Graph API user provisioning, and secure authentication flows.',
-            'Integrated multiple platform tools: Jira, Kubernetes metrics/monitoring, TechDocs, GitHub org imports, and catalog templates.',
-            'Working in a Linux-based cloud environment using containers, cloud APIs, and infrastructure automation.',
-            'Upcoming work includes enabling GitHub-based student login and expanding platform access.'
-
-        ],
-        tags: ['Kubernetes', 'Backstage', 'Azure', 'Cloud', 'IDP'],
-        type: 'research'
+      role: 'Graduate Research Assistant',
+      organization: 'Ohio University - Dr. Shawn Ostermann & Ilya Kogan',
+      startDate: 'May 2024',
+      endDate: 'Present',
+      description: [
+        'Leading integration of Backstage (internal developer portal) into the university’s cloud-native Kubernetes platform, focusing on scalability, reliability, and developer workflow improvements.',
+        'Implemented Azure AD SSO, Microsoft Graph API user provisioning, and secure authentication flows.',
+        'Integrated multiple platform tools: Jira, Kubernetes metrics/monitoring, TechDocs, GitHub org imports, and catalog templates.',
+        'Working in a Linux-based cloud environment using containers, cloud APIs, and infrastructure automation.',
+        'Upcoming work includes enabling GitHub-based student login and expanding platform access.'
+        
+      ],
+      tags: ['Kubernetes', 'Backstage', 'Azure', 'Cloud', 'IDP'],
+      type: 'research'
+    },
+    {
+      role: 'Instructor of Record — CS1400: Fundamentals of Computing',
+      organization: 'Ohio University',
+      startDate: 'August 2025',
+      endDate: 'December 2025',
+      description: [
+        'Design and deliver lectures, quizzes, programming assignments, exams, and supplemental materials for ~25 students.',
+        'Manage all course materials and grading, providing timely feedback to support student learning.',
+        'Teach foundational computing concepts, including computational thinking, problem solving, algorithms, Python programming, and contemporary issues in computer science.'
+      ],
+      tags: ['Teaching', 'Python', 'CS Education'],
+      type: 'teaching'
+    },
+    {
+      role: 'B.S. in Computer Science',
+      organization: 'Ohio University',
+      startDate: 'August 2020',
+      endDate: 'May 2024',
+      description: [
+        'GPA: 3.775/4.0',
+        'Magna Cum Laude'
+      ],
+      type: 'education'
     },
     {
     role: 'Undergraduate Research Assistant',
@@ -65,6 +89,17 @@ export const experiences: Experience[] = [
     type: 'job'
   },
   {
+    role: 'Valedictorian',
+    organization: 'Western Brown High School',
+    startDate: 'August 2016',
+    endDate: 'May 2020',
+    description: [
+      'GPA: 4.0/4.0',
+      'STEM Honors Diploma'
+    ],
+    type: 'education'
+  },
+  {
     role: 'Technology Department Intern',
     organization: 'Western Brown Local Schools',
     startDate: 'June 2019',
@@ -77,39 +112,4 @@ export const experiences: Experience[] = [
     tags: ['Hardware', 'Networking', 'Support', 'IT'],
     type: 'job'
   },
-  {
-    role: 'Instructor of Record — CS1400: Fundamentals of Computing',
-    organization: 'Ohio University',
-    startDate: 'August 2025',
-    endDate: 'December 2025',
-    description: [
-      'Design and deliver lectures, quizzes, programming assignments, exams, and supplemental materials for ~25 students.',
-      'Manage all course materials and grading, providing timely feedback to support student learning.',
-      'Teach foundational computing concepts, including computational thinking, problem solving, algorithms, Python programming, and contemporary issues in computer science.'
-    ],
-    tags: ['Teaching', 'Python', 'CS Education'],
-    type: 'teaching'
-  },
-  {
-    role: 'B.S. in Computer Science',
-    organization: 'Ohio University',
-    startDate: 'August 2020',
-    endDate: 'August 2024',
-    description: [
-      'GPA: 3.775/4.0',
-      'Magna Cum Laude'
-    ],
-    type: 'education'
-  },
-  {
-    role: 'Valedictorian',
-    organization: 'Western Brown High School',
-    startDate: 'August 2016',
-    endDate: 'August 2020',
-    description: [
-      'GPA: 4.0/4.0',
-      'STEM Honors Diploma'
-    ],
-    type: 'education'
-  }
 ]
