@@ -1,36 +1,107 @@
 <div class="page">
   <div class="projects-grid">
-    <div *ngFor="let proj of projects"
-        class="project-card"
-        [ngClass]="{ expanded: isExpanded(proj) }"
-        (click)="toggleCard(proj)">
+    <div
+      *ngFor="let proj of projects"
+      class="project-card"
+      [ngClass]="{ expanded: isExpanded(proj) }"
+      (click)="toggleCard(proj)"
+    >
 
-      <div class="card-header">
+      <!-- Header -->
+      <header class="card-header">
         <div class="type-label">
-          <span *ngFor="let t of proj.types" class="type" [ngClass]="getTypeClass(t)">{{ t }}</span>
-        </div>
-        <h3>{{ proj.title }}</h3>
-        <div class="project-meta">
-          <span class="status" [ngClass]="proj.status.toLowerCase().replace(' ', '-')">
-              {{ proj.status }}
+          <span
+            *ngFor="let t of proj.types"
+            class="type"
+            [ngClass]="getTypeClass(t)"
+          >
+            {{ t }}
           </span>
         </div>
-        <img *ngIf="proj.imageUrl" [src]="proj.imageUrl" alt="{{ proj.title }}" class="project-image" />
-  
-        <div class="card-description" *ngIf="isExpanded(proj)">
-          <ul>
-            <li *ngFor="let d of proj.description">{{ d }}</li>
-          </ul>
-          <div *ngIf="proj.links?.length" class="links">
-            <a *ngFor="let link of proj.links" [href]="link.url" target="_blank">{{ link.label }}</a>
-          </div>
-  
-          <button class="detail-button" (click)="$event.stopPropagation()">View Details →</button>
+
+        <h3 class="project-title">{{ proj.title }}</h3>
+      </header>
+
+      <!-- Image -->
+      <img
+        *ngIf="proj.imageUrl"
+        [src]="proj.imageUrl"
+        [alt]="proj.title"
+        class="project-image"
+      />
+
+      <!-- Meta -->
+      <div class="project-meta">
+        <div class="status-wrap">
+          <span
+            class="status"
+            [ngClass]="proj.status.toLowerCase().replace(' ', '-')"
+            >
+            {{ proj.status }}
+          </span>
         </div>
+
         <div class="tags">
-          <span *ngFor="let t of proj.tags" class="tag">{{ t }}</span>
+          <span *ngFor="let t of proj.tags" class="tag">
+            {{ t }}
+          </span>
         </div>
       </div>
+
+      <!-- Expanded Content -->
+      <div class="card-description" *ngIf="isExpanded(proj)">
+        <ul>
+          <li *ngFor="let d of proj.description">{{ d }}</li>
+        </ul>
+
+        <div class="project-actions">
+          <a *ngIf="proj.github" 
+            [href]="proj.github" 
+            target="_blank" 
+            class="platform-button github" 
+            (click)="$event.stopPropagation()"
+          >
+            <img src="icons/github-mark.png" alt="GitHub logo" class="platform-icon" />
+            <img src="icons/github.png" alt="GitHub logo" class="platform-icon" />
+          </a>
+
+          <a *ngIf="proj.printables" 
+            [href]="proj.printables" 
+            target="_blank" 
+            class="platform-button printables" 
+            (click)="$event.stopPropagation()"
+          >
+            <img src="icons/printables.svg" alt="Printables logo" class="platform-icon" />
+          </a>
+
+          <a *ngIf="proj.dockerhub" 
+            [href]="proj.dockerhub" 
+            target="_blank" 
+            class="platform-button dockerhub" 
+            (click)="$event.stopPropagation()"
+          >
+            <img src="icons/docker.svg" alt="DockerHub logo" class="platform-icon" />
+          </a>
+
+          <a *ngIf="proj.website" 
+            [href]="proj.website" 
+            target="_blank" 
+            class="platform-button website" 
+            (click)="$event.stopPropagation()"
+          >
+            Website
+          </a>
+
+          <a *ngIf="proj.detailsPage"
+            [href]="proj.detailsPage"
+            class="platform-button detail"
+            (click)="$event.stopPropagation();"
+          >
+            View Details →
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

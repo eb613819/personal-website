@@ -111,35 +111,72 @@
   color: var(--text-secondary);
 }
 
-.links a {
-  display: inline-block;
-  margin-right: 0.5rem;
-  color: var(--text-muted);
-  text-decoration: underline;
-  font-weight: bold;
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
 }
 
-.project-meta {
-  display: flex;
-  gap: 1rem;
-  font-size: 0.9rem;
-  opacity: 0.85;
-  margin-top: 0.25rem;
+.platform-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.platform-button img {
+  height: 1em;             
+  width: auto;
+}
+
+
+.platform-button.github { background-color: #24292f; }
+.platform-button.dockerhub { background-color: #2496ed;}
+.platform-button.printables { background-color: #ff5f00; }
+.platform-button.website { 
+  background-color: rgba(75, 85, 99, 0.2); 
+  color: var(--text-primary) 
+}
+.platform-button.detail {
+  background-color: var(--active-bg);
+  color: var(--accent-primary);
+}
+
+.platform-button:hover {
+  background-color: rgba(0,0,0,0.1);
+  transform: translateY(-1px);
 }
 
 /* ---------- status ---------- */
+.project-meta {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column; 
+  gap: 0.5rem;
+}
+
 .status {
   font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
 }
 
 .status.completed {
-  color: #4caf50;
+  color: #9ca3af; /* cool gray */
 }
 
 .status.in-progress {
-  color: #ff9800;
+  color: #d1a23cd7; /* muted amber */
 }
 
 .status.not-started {
-  color: #ff2121;
+  color: #c26b6b; /* soft red */
 }

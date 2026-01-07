@@ -18,7 +18,12 @@ export interface Project {
   description: string[];
   tags?: string[];
   imageUrl?: string;
-  links?: { label: string; url: string }[];
+  
+  detailsPage?: string;
+  github?: string;
+  printables?: string;
+  dockerhub?: string;
+  website?: string; // generic website
 }
 
 export const projects: Project[] = [
@@ -32,9 +37,11 @@ export const projects: Project[] = [
       'Hosted on local server with GitHub integration for version control.'
     ],
     tags: ['Angular', 'Node.js', 'TypeScript', 'Portfolio'],
-    links: [
-      { label: 'GitHub', url: 'https://github.com/eb613819/personal-website' }
-    ]
+    detailsPage: '/experience',
+    github: 'https://github.com/eb613819/personal-website',
+    printables: '/experience',
+    dockerhub: '/experience',
+    website: '/experience',
   },
   {
     title: 'NAS Build',
@@ -59,9 +66,7 @@ export const projects: Project[] = [
     ],
     tags: ['Raspberry Pi', 'IoT', 'Smart Home', 'Hardware'],
     imageUrl: '/assets/images/magic-mirror.jpg',
-    links: [
-      { label: 'Magic Mirror GitHub', url: 'https://github.com/MichMich/MagicMirror' }
-    ]
+    github: 'https://github.com/MichMich/MagicMirror'
   },
   {
     title: 'Insulin Holder',
