@@ -1,0 +1,26 @@
+<aside class="filter-panel" [class.collapsed]="collapsed">
+  <button class="collapse-btn" (click)="collapsed = !collapsed">
+    {{ collapsed ? '▶' : '◀' }}
+  </button>
+  <div *ngIf="!collapsed" class="filters">
+    <h3>Filters</h3>
+
+    <div *ngFor="let group of groups" class="filter-group">
+        <h4>{{ group.label }}</h4>
+
+        <button
+        *ngFor="let opt of group.options"
+        type="button"
+        class="filter-chip"
+        [class.active]="isSelected(group.key, opt.value)"
+        (click)="toggle(group.key, opt.value)"
+        >
+        {{ opt.label }}
+        </button>
+    </div>
+
+    <button class="clear-btn" (click)="clear.emit()">
+        Clear filters
+    </button>
+  </div>
+</aside>

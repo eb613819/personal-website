@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { projects, Project } from '../../data/project';
+import { projects, Project, ProjectStatus, ProjectType } from '../../data/project';
+import { FilterGroup, FilterState } from '../../shared/filter-panel/filter.model';
+import { FilterPanelComponent } from '../../shared/filter-panel/filter-panel.component';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FilterPanelComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
@@ -50,5 +52,54 @@ export class ProjectsComponent {
 
   getTypeClass(type: string): string {
     return 'type-' + type.toLowerCase().replace(/[\s]/g, '').replace(/[\s\/]/g, '-');
+  }
+
+  //Filter logic
+  filterState: FilterState = {};
+
+  filterGroups: FilterGroup[] = [
+    {
+      key: 'types',
+      label: 'Project Type',
+      multi: true,
+      options: Array.from(
+        new Set(projects.flatMap((p: Project) => p.types))
+      ).map((t: ProjectType) => ({
+        label: t,
+        value: t
+      }))
+    },
+    {
+      key: 'status',
+      label: 'Status',
+      multi: true,
+      options: (['Completed', 'In Progress', 'Not Started'] as ProjectStatus[])
+        .map((s: ProjectStatus) => ({
+          label: s,
+          value: s
+        }))
+    },
+    {
+      key: 'tags',
+      label: 'Tags',
+      multi: true,
+      options: Array.from(
+        new Set(projects.flatMap(p => p.tags ?? []))
+      ).map(t => ({ label: t, value: t }))
+    }
+  ];
+
+  get filteredProjects(): Project[] {
+    return this.projects.filter(p => {
+      const types = this.filterState['types'] as ProjectType[] | undefined;
+      const status = this.filterState['status'] as ProjectStatus[] | undefined;
+      const tags = this.filterState['tags'] as string[] | undefined;
+
+      if (types?.length && !types.some(t => p.types.includes(t))) return false;
+      if (status?.length && !status.includes(p.status)) return false;
+      if (tags?.length && !tags.some(t => p.tags?.includes(t))) return false;
+
+      return true;
+    });
   }
 }

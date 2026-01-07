@@ -64,9 +64,32 @@ a:hover {
 }
 
 .page {
-  max-width: 1100px;
+  max-width: 2000px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
+}
+
+.page.with-filter {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-panel {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+}
+
+.filter-panel.collapsed {
+  width: 40px;
+}
+
+.filter-panel .collapse-btn {
+  display: block;
+  margin-bottom: 1rem;
 }
 
 router-outlet + * {
