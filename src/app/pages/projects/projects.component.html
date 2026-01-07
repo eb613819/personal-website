@@ -7,7 +7,7 @@
 
       <div class="card-header">
         <div class="type-label">
-          <span *ngFor="let t of proj.types" class="type">{{ t }}</span>
+          <span *ngFor="let t of proj.types" class="type" [ngClass]="getTypeClass(t)">{{ t }}</span>
         </div>
         <h3>{{ proj.title }}</h3>
         <div class="project-meta">
@@ -15,24 +15,22 @@
               {{ proj.status }}
           </span>
         </div>
+        <img *ngIf="proj.imageUrl" [src]="proj.imageUrl" alt="{{ proj.title }}" class="project-image" />
+  
+        <div class="card-description" *ngIf="isExpanded(proj)">
+          <ul>
+            <li *ngFor="let d of proj.description">{{ d }}</li>
+          </ul>
+          <div *ngIf="proj.links?.length" class="links">
+            <a *ngFor="let link of proj.links" [href]="link.url" target="_blank">{{ link.label }}</a>
+          </div>
+  
+          <button class="detail-button" (click)="$event.stopPropagation()">View Details →</button>
+        </div>
         <div class="tags">
           <span *ngFor="let t of proj.tags" class="tag">{{ t }}</span>
         </div>
       </div>
-
-      <img *ngIf="proj.imageUrl" [src]="proj.imageUrl" alt="{{ proj.title }}" class="project-image" />
-
-      <div class="card-description" *ngIf="isExpanded(proj)">
-        <ul>
-          <li *ngFor="let d of proj.description">{{ d }}</li>
-        </ul>
-        <div *ngIf="proj.links?.length" class="links">
-          <a *ngFor="let link of proj.links" [href]="link.url" target="_blank">{{ link.label }}</a>
-        </div>
-
-        <button class="detail-button" (click)="$event.stopPropagation()">View Details →</button>
-      </div>
-
     </div>
   </div>
 </div>

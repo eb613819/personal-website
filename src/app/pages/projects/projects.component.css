@@ -1,3 +1,4 @@
+/* ---------- Project Cards ---------- */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -8,22 +9,30 @@
 
 .project-card {
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  color: #fff;
+  box-shadow: var(--shadow-md);
+  color: var(--text-primary);
   transition: all 0.3s ease;
   box-sizing: border-box;
-  background-color: #343a40;
+  background-color: var(--bg-card);
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  transform: translateX(-3px);
+  box-shadow: var(--shadow-lg);
 }
 
 .project-card.expanded {
   grid-column: 1 / -1;      
   z-index: 10;               
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: var(--shadow-lg);
 }
 
 .card-header h3, .card-header p { margin: 0; }
 
+/* ---------- Type Labels ---------- */
 .type-label {
   display: flex;
   flex-wrap: wrap;
@@ -32,14 +41,41 @@
 }
 
 .type-label .type {
-  background-color: rgba(255,255,255,0.2);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: bold;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 600;
   text-transform: uppercase;
+  background-color: #374151;
+  color: #f9fafb;
 }
 
+.type-software-web {
+  background-color: rgba(14, 165, 233, 0.2); 
+  color: #0ea5e9;
+}
+
+.type-hardware-it {
+  background-color: rgba(253, 126, 20, 0.2); 
+  color: #fd7e14;
+}
+
+.type-3dprint-maker {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.type-electronics-raspberrypi {
+  background-color: rgba(117, 67, 235, 0.2);
+  color: #8b5cf6;
+}
+
+.type-other-experimental {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+/* ---------- Tags ---------- */
 .tags {
   margin-top: 0.5rem;
   display: flex;
@@ -49,12 +85,16 @@
 
 .tag {
   display: inline-block;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(31, 41, 55, 0.25);
+  color: var(--text-secondary);
+  font-weight: 500;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   font-size: 0.8rem;
+  border-radius: var(--radius-sm);
 }
 
+/* ---------- Image ---------- */
 .project-image {
   width: 100%;
   height: auto;
@@ -62,17 +102,19 @@
   border-radius: 4px;
 }
 
+/* ---------- Descriptions ---------- */
 .card-description {
   margin-top: 0.5rem;
-  background-color: rgba(255,255,255,0.1);
-  padding: 0.5rem;
-  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(0, 0, 0, 0.2); 
+  color: var(--text-secondary);
 }
 
 .links a {
   display: inline-block;
   margin-right: 0.5rem;
-  color: #fff;
+  color: var(--text-muted);
   text-decoration: underline;
   font-weight: bold;
 }
@@ -85,6 +127,7 @@
   margin-top: 0.25rem;
 }
 
+/* ---------- status ---------- */
 .status {
   font-weight: 600;
 }

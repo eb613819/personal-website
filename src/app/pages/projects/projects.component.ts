@@ -47,4 +47,8 @@ export class ProjectsComponent {
   isExpanded(proj: Project): boolean {
     return this.expandedProject === proj;
   }
+
+  getTypeClass(type: string): string {
+    return 'type-' + type.toLowerCase().replace(/[\s]/g, '').replace(/[\s\/]/g, '-');
+  }
 }
