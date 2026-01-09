@@ -73,7 +73,7 @@ a:hover {
 
 .page.with-filter {
   display: flex;
-  height: calc(100vh - 87px); 
+  height: calc(100vh - 48px); 
   overflow: hidden;
 }
 

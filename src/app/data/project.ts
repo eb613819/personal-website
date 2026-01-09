@@ -77,5 +77,57 @@ export const projects: Project[] = [
       'Include a temp monitor that alerts if the temp is outside range.'
     ],
     tags: ['Raspberry Pi', 'Temperature Monitor', 'Smart Home', 'Fridge']
-  }
+  },
+  {
+    title: "Raspberry Pi Pen Testing Rig",
+    types: ['Electronics / Raspberry Pi', '3D Print / Maker'],
+    status: "Completed",
+    completionDate: "02-01-2025",
+    description: [
+      "Built a portable pen-testing rig inside an off-brand Pelican case.",
+      "Used a Raspberry Pi running Kali Linux for lightweight pentesting tasks.",
+      "Included 3D printed mounts and enclosures for components to keep it organized and portable."
+    ],
+    tags: ["PenTesting", "Raspberry Pi", "Kali Linux", "3D Printing", "Cybersecurity"],
+    imageUrl: "images/pentest.jpg"
+  },
+  {
+    title: "Home Lab Server Build",
+    types: ['Hardware / IT'],
+    status: "Completed",
+    completionDate: "03-25-2025",
+    description: [
+      "Rebuilt a server using an old Supermicro X8DTN+ dual processor motherboard.",
+      "Installed it in a Fractal Design case with modular PSU and proper cable management.",
+      "Configured drives and power distribution for reliable home server operation.",
+      "Installed Proxmox VE to run multiple virtual machines, experimenting with virtualization, networking, and containerized workloads."
+    ],
+    tags: ["Homelab", "Server", "Supermicro", "Linux", "Proxmox", "Virtualization"],
+    imageUrl: "images/server.jpg"
+  },
+  {
+    title: "3D Printed Stool Foot",
+    types: ['3D Print / Maker'],
+    status: "Completed",
+    completionDate: "01-9-2026",
+    description: [
+      "Designed a custom stool foot to replace a missing leg cap.",
+      "3D printed it in TPU for flexibility and grip.",
+      "Tested fit and durability to ensure stability."
+    ],
+    tags: ["3D Printing", "TPU", "CAD", "Design"],
+  },
+  {
+    title: "LED Drum Kit Lights",
+    types: ['Electronics / Raspberry Pi', '3D Print / Maker'],
+    status: "Completed",
+    completionDate: "12-07-2019",
+    description: [
+      "Built an interactive LED lighting system for marching drums.",
+      "Used piezo sensors on each drum to trigger individual LED strips.",
+      "Controlled by Arduino for dynamic visual feedback while playing."
+    ],
+    tags: ["Arduino", "LED", "Sensors"],
+    imageUrl: "images/drum_lights.jpg"
+  },
 ];
