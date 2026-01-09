@@ -162,3 +162,19 @@
   background-color: transparent;
   border-top: 1px solid var(--shadow-md);
 }
+
+.project-image {
+  width: 100%;
+  max-width: 400px;
+  max-height: 250px;  
+  object-fit: cover;     
+  border-radius: var(--radius-md);
+  margin: 0.5rem 0;
+  display: block;
+}
+
+.project-card.expanded .project-image {
+  max-width: 100%;       
+  max-height: none;      
+  object-fit: contain;   
+}

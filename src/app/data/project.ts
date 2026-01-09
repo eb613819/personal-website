@@ -37,11 +37,7 @@ export const projects: Project[] = [
       'Hosted on local server with GitHub integration for version control.'
     ],
     tags: ['Angular', 'Node.js', 'TypeScript', 'Portfolio'],
-    detailsPage: '/experience',
     github: 'https://github.com/eb613819/personal-website',
-    printables: '/experience',
-    dockerhub: '/experience',
-    website: '/experience',
   },
   {
     title: 'NAS Build',
@@ -129,5 +125,18 @@ export const projects: Project[] = [
     ],
     tags: ["Arduino", "LED", "Sensors"],
     imageUrl: "images/drum_lights.jpg"
+  },
+  {
+    title: "H2Load HTTP/3 Docker Container",
+    types: ["Software / Web"],
+    status: "Completed",
+    completionDate: "10-31-2024",
+    description: [
+      "Packaged the H2Load HTTP/3 load-testing tool into a lightweight Docker container.",
+      "Configured it to run easily on any system with Docker installed, eliminating the need for manual build and dependency setup.",
+      "Tested HTTP/3 and HTTP/2 endpoints for performance and stress testing."
+    ],
+    tags: ["Docker", "HTTP/3", "HTTP/2", "Networking", "Containerization"],
+    dockerhub: "https://hub.docker.com/repository/docker/eb613819/h2load-http3",
   },
 ];
