@@ -1,27 +1,43 @@
-# PersonalWebsite
+# Personal Website – Evan Brooks
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+This repository contains the source code for my personal portfolio website.
 
-## Development server
+The site highlights selected projects, technical experience, and hands-on work across software development, infrastructure, electronics, and fabrication. It is intended to provide an overview of my skills, interests, and the types of problems I enjoy working on.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tech Stack
 
-## Code scaffolding
+- Angular
+- TypeScript
+- HTML / CSS
+- Responsive design
+- Deployed as a static site
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
+
+- Project gallery with filtering by type, tags, and status
+- Expandable project cards with images and links
+- Experience gallery with filtering by type and tags
+- Resume download
+- Clean, minimal UI
+
+## Local Development
+
+To run the site locally:
+
+```bash
+npm install
+ng serve
+```
+
+Open `http://localhost:4200` in a browser.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run
+```bash
+ng build
+```
+to generate a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## License
+This project is provided for personal and educational reference. All site content and design are © Evan Brooks.
