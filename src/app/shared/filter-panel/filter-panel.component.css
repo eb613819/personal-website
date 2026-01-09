@@ -1,0 +1,201 @@
+.filter-panel {
+  width: 250px;
+  height: 100%;
+  margin-top: 0;
+  position: relative; 
+  background-color: var(--bg-card);
+  border-radius: 0 12px 12px 0;
+  padding: 1rem;
+  box-shadow: var(--shadow-lg);
+  transition: width 0.3s;
+  overflow: hidden;
+}
+
+.filter-panel.collapsed {
+  width: 10px; 
+}
+
+.filter-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.filter-panel-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: var(--text-secondary);
+}
+
+.clear-btn {
+  all: unset;
+  cursor: pointer;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+
+  padding: 0.25rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+.filter-group-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.filter-group {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;    
+  gap: 0.5rem;            
+}
+
+/* ---------- tags chips ---------- */
+.filter-chip.tags {
+  background-color: var(--tag-color);
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* ---------- types chips ---------- */
+.filter-chip.types {
+  background-color: #374151;
+  color: #f9fafb;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+}
+
+.filter-chip.type {
+  text-transform: uppercase;
+  width: fit-content;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+}
+
+.filter-chip.job {
+  background-color: rgba(253, 126, 20, 0.2);
+  color: #fd7e14;  
+}
+
+.filter-chip.research {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.filter-chip.teaching {
+  background-color: rgba(117, 67, 235, 0.2);
+  color: #8b5cf6;
+}
+
+.filter-chip.education {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+/* ---------- status chips ---------- */
+.filter-chip.status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.filter-chip.Completed {
+  color: #9ca3af;
+}
+
+.filter-chip.Progress {
+  color: #d1a23cd7;
+}
+
+.filter-chip.Started {
+  color: #c26b6b;
+}
+
+/* ---------- all chips ---------- */
+.filter-chip {
+  appearance: none;
+  border: none;
+  outline: none;
+  border-radius: var(--radius-sm);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.1s ease;
+    cursor: pointer;
+}
+
+.filter-chip:hover {
+  background-color: var(--hover-bg);
+  color: var(--accent-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm)
+}
+
+.filter-chip.active {
+  background-color: var(--accent-primary);
+  color: var(--text-primary)
+}
+
+/* ---------- collapse button ---------- */
+.collapse-btn {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  
+  width: 24px;
+  height: 96px;
+  padding: 0;
+  box-shadow: 0 -12px 25px rgba(0, 0, 0, 0.35);
+
+  border: none;
+  border-radius: var(--radius-md); 
+  background-color: var(--accent-primary);
+  color: var(--bg-card);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  cursor: pointer;
+  transform: rotate(180deg) translateY(50%);
+  transition: transform 0.3s, background-color 0.2s;
+}
+
+.collapse-btn:hover {
+  background-color: var(--active-bg);
+  color: var(--accent-primary);
+}
+
+.arrow {
+  transition: transform 0.3s;
+  display: block;
+  transform: translateX(5px);
+}
+
+.filter-panel.collapsed .arrow {
+  transform: translateX(4px) rotate(180deg); 
+}

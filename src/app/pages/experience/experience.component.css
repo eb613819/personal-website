@@ -80,7 +80,7 @@
   border-radius: var(--radius-sm);
   margin-right: 0.3rem;
   font-size: 0.8rem;
-  background-color: rgba(31, 41, 55, 0.25);
+  background-color: var(--tag-color);
   color: var(--text-secondary);
   font-weight: 500;
 }

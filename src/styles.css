@@ -22,6 +22,8 @@
 
   --hover-bg: rgba(59, 130, 246, 0.2);
   --active-bg: rgba(59, 130, 246, 0.25);
+
+  --tag-color: rgba(31, 41, 55, 0.25);
 }
 
 * {
@@ -66,30 +68,19 @@ a:hover {
 .page {
   max-width: 2000px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  
 }
 
 .page.with-filter {
   display: flex;
-  gap: 1rem;
-}
-
-.filter-panel {
-  width: 250px;
-  flex-shrink: 0;
+  height: calc(100vh - 87px); 
+  overflow: hidden;
 }
 
 .content {
   flex: 1;
-}
-
-.filter-panel.collapsed {
-  width: 40px;
-}
-
-.filter-panel .collapse-btn {
-  display: block;
-  margin-bottom: 1rem;
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
 }
 
 router-outlet + * {

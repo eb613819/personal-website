@@ -1,26 +1,45 @@
 <aside class="filter-panel" [class.collapsed]="collapsed">
   <button class="collapse-btn" (click)="collapsed = !collapsed">
-    {{ collapsed ? '▶' : '◀' }}
+    <svg
+        class="arrow"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+    >
+        <path
+        d="M10 2 L14 12 L10 22"
+        stroke="currentColor"
+        stroke-width="2"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        />
+    </svg>
   </button>
   <div *ngIf="!collapsed" class="filters">
-    <h3>Filters</h3>
-
-    <div *ngFor="let group of groups" class="filter-group">
-        <h4>{{ group.label }}</h4>
-
-        <button
-        *ngFor="let opt of group.options"
-        type="button"
-        class="filter-chip"
-        [class.active]="isSelected(group.key, opt.value)"
-        (click)="toggle(group.key, opt.value)"
-        >
-        {{ opt.label }}
+    <div class="filter-panel-header">
+        <h3 class="filter-panel-title">Filters</h3>
+        <button class="clear-btn" (click)="clear.emit()">
+            Clear filters
         </button>
     </div>
-
-    <button class="clear-btn" (click)="clear.emit()">
-        Clear filters
-    </button>
+    <div *ngFor="let group of groups" class="filter-group">
+        <div class="filter-group-label">
+            <h4>{{ group.label }}</h4>
+        </div>
+        <div class="filter-options">
+            <button
+            *ngFor="let opt of group.options"
+            type="button"
+            class="filter-chip"
+            [ngClass]="[group.key, opt.value]"
+            [class.active]="isSelected(group.key, opt.value)"
+            (click)="toggle(group.key, opt.value)"
+            >
+                {{ opt.label }}
+            </button>
+        </div>
+    </div>
   </div>
 </aside>

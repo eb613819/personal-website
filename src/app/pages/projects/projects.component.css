@@ -50,31 +50,6 @@
   color: #f9fafb;
 }
 
-.type-software-web {
-  background-color: rgba(14, 165, 233, 0.2); 
-  color: #0ea5e9;
-}
-
-.type-hardware-it {
-  background-color: rgba(253, 126, 20, 0.2); 
-  color: #fd7e14;
-}
-
-.type-3dprint-maker {
-  background-color: rgba(16, 185, 129, 0.2);
-  color: #10b981;
-}
-
-.type-electronics-raspberrypi {
-  background-color: rgba(117, 67, 235, 0.2);
-  color: #8b5cf6;
-}
-
-.type-other-experimental {
-  background-color: rgba(239, 68, 68, 0.2);
-  color: #ef4444;
-}
-
 /* ---------- Tags ---------- */
 .tags {
   margin-top: 0.5rem;
@@ -85,11 +60,10 @@
 
 .tag {
   display: inline-block;
-  background-color: rgba(31, 41, 55, 0.25);
+  background-color: var(--tag-color);
   color: var(--text-secondary);
   font-weight: 500;
   padding: 0.2rem 0.5rem;
-  border-radius: 4px;
   font-size: 0.8rem;
   border-radius: var(--radius-sm);
 }
@@ -161,7 +135,6 @@
 }
 
 .status {
-  font-weight: 600;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.04em;
