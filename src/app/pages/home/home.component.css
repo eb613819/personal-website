@@ -1,0 +1,96 @@
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.home-card {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  width: 95%;
+  padding: 1.5rem 2rem;   
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-md);
+  box-sizing: border-box;
+}
+
+.home-card h1 {
+  margin: 0;
+  font-size: 2.75rem;
+  font-weight: 700;
+}
+
+.home-subtitle {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.home-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.home-button {
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 500;
+  color: #FFF;
+  background-color: var(--accent-primary);
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.home-button:hover {
+  transform: translateY(-2px);
+  background-color: var(--hover-bg);
+  color: var(--accent-primary);
+}
+
+.role-tags {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
+}
+
+.role-tag {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+.domain-tags {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.domain-tag {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: var(--tag-color);
+  color: var(--text-secondary);
+}
