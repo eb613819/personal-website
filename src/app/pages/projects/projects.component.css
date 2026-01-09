@@ -108,7 +108,6 @@
   width: auto;
 }
 
-
 .platform-button.github { background-color: #24292f; }
 .platform-button.dockerhub { background-color: #2496ed;}
 .platform-button.printables { background-color: #ff5f00; }
@@ -116,6 +115,7 @@
   background-color: rgba(75, 85, 99, 0.2); 
   color: var(--text-primary) 
 }
+
 .platform-button.detail {
   background-color: var(--active-bg);
   color: var(--accent-primary);
