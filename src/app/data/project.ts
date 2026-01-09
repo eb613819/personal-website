@@ -38,6 +38,7 @@ export const projects: Project[] = [
     ],
     tags: ['Angular', 'Node.js', 'TypeScript', 'Portfolio'],
     github: 'https://github.com/eb613819/personal-website',
+    imageUrl: 'images/site_logo.png',
   },
   {
     title: 'NAS Build',

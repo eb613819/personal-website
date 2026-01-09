@@ -174,7 +174,7 @@
 }
 
 .project-card.expanded .project-image {
-  max-width: 100%;       
+  max-width: 50%;       
   max-height: none;      
   object-fit: contain;   
 }
