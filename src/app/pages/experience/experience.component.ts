@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { experiences, Experience, ExperienceType } from '../../data/experience';
 import { FilterGroup, FilterState } from '../../shared/filter-panel/filter.model';
 import { FilterPanelComponent } from '../../shared/filter-panel/filter-panel.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-experience',
@@ -16,7 +17,8 @@ export class ExperienceComponent {
 
   expandedCards: Set<Experience> = new Set();
 
-  constructor() {
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Experience | Evan Brooks Portfolio');
     //Sort by endDate descending. 'Present' is newest
     this.experiences = experiences.sort((a, b) => {
       const getDate = (d: string) => d.toLowerCase() === 'present' ? new Date() : new Date(d);

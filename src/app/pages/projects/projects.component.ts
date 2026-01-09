@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { projects, Project, ProjectStatus, ProjectType } from '../../data/project';
 import { FilterGroup, FilterState } from '../../shared/filter-panel/filter.model';
 import { FilterPanelComponent } from '../../shared/filter-panel/filter-panel.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-projects',
@@ -15,7 +16,8 @@ export class ProjectsComponent {
   projects: Project[];
   expandedProject: Project | null = null;
 
-  constructor() {
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Projects | Evan Brooks Portfolio');
     this.projects = projects.sort((a, b) => {
       const statusOrder = (s: Project['status']) => {
         if (s === 'Completed') return 0;

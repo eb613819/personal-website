@@ -73,3 +73,12 @@
   height: 60px;
   opacity: 0.4;
 }
+
+.site-footer {
+  text-align: center;         
+  padding: 0.25rem 0;          
+  font-size: 0.75rem;         
+  color: var(--text-secondary);
+  background-color: transparent;
+  border-top: 1px solid var(--shadow-md);
+}
