@@ -115,17 +115,6 @@
   border-radius: var(--radius-sm);
 }
 
-/* ---------- image ---------- */
-.project-image {
-  width: 100%;
-  max-width: 400px;
-  max-height: 250px;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  margin: 0.5rem 0;
-  display: block;
-}
-
 .project-card.expanded .project-image {
   max-width: 100%;
   max-height: 100%;
@@ -213,13 +202,6 @@
 
   .project-card.expanded .reg-content,
   .project-card.expanded .card-description {
-    flex: none;
     width: 100%;
-  }
-
-  .project-card.expanded .project-image {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
   }
 }

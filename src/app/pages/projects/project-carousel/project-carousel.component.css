@@ -11,7 +11,7 @@
 }
 
 .carousel-container.expanded {
-    height: 500px;
+    height: 100%;
 }
 
 .carousel-image {
