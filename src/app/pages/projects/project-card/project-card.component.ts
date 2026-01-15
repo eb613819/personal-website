@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Project } from '../../../data/project';
+import { Project } from '../../../interfaces/project.interface';
 import { ProjectCarouselComponent } from '../project-carousel/project-carousel.component';
 
 @Component({
@@ -11,7 +11,7 @@ import { ProjectCarouselComponent } from '../project-carousel/project-carousel.c
   styleUrl: './project-card.component.css',
 })
 export class ProjectCardComponent {
-  @Input() projects!: Project[];
+  @Input() projects: Project[] = [];
   expandedProject: Project | null = null;
 
   stop(e: Event) {
@@ -34,4 +34,3 @@ export class ProjectCardComponent {
     return 'type-' + type.toLowerCase().replace(/[\s\/]/g, '-');
   }
 }
-

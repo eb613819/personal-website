@@ -22,8 +22,8 @@
             </header>
 
             <!-- Image -->
-            <app-project-carousel 
-                [images]="project.imageUrl || []"
+            <app-project-carousel
+                [images]="project.images || []"
                 [expanded]="isExpanded(project)"
                 (click)="$event.stopPropagation()"
             ></app-project-carousel>
