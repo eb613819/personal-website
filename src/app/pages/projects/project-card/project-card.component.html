@@ -22,12 +22,11 @@
             </header>
 
             <!-- Image -->
-            <img
-                *ngIf="project.imageUrl"
-                [src]="project.imageUrl"
-                [alt]="project.title"
-                class="project-image"
-            />
+            <app-project-carousel 
+                [images]="project.imageUrl || []"
+                [expanded]="isExpanded(project)"
+                (click)="$event.stopPropagation()"
+            ></app-project-carousel>
 
             <!-- Meta -->
             <div class="project-meta">

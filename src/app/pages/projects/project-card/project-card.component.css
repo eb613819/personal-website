@@ -25,6 +25,12 @@
   background-color: var(--bg-card);
 }
 
+.reg-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; 
+}
+
 .project-card:hover {
   transform: translateY(-3px) translateX(-3px);
   box-shadow: var(--shadow-lg);
@@ -52,6 +58,19 @@
   width: auto;
   margin-top: 0;
   cursor: default;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+/* ---------- header ---------- */
+.card-header {
+  display: flex;
+  min-height: 6rem;
+  justify-content: flex-end;
+  align-items: flex-start; 
+  flex-direction: column;
 }
 
 /* ---------- header ---------- */

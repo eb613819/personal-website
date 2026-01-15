@@ -1,11 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project } from '../../../data/project';
+import { ProjectCarouselComponent } from '../project-carousel/project-carousel.component';
 
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ProjectCarouselComponent],
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.css',
 })

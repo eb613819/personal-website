@@ -17,7 +17,7 @@ export interface Project {
   completionDate?: string;
   description: string[];
   tags?: string[];
-  imageUrl?: string;
+  imageUrl?: string[];
   
   detailsPage?: string;
   github?: string;
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     ],
     tags: ['Angular', 'Node.js', 'TypeScript', 'Portfolio'],
     github: 'https://github.com/eb613819/personal-website',
-    imageUrl: 'images/site_logo.png',
+    imageUrl: ['images/site_logo.png'],
   },
   {
     title: 'NAS Build',
@@ -62,7 +62,7 @@ export const projects: Project[] = [
       'Focused on physical assembly, wiring, and enclosure construction.'
     ],
     tags: ['Raspberry Pi', 'IoT', 'Smart Home', 'Hardware'],
-    imageUrl: '/assets/images/magic-mirror.jpg',
+    imageUrl: ['/assets/images/magic-mirror.jpg'],
     github: 'https://github.com/MichMich/MagicMirror'
   },
   {
@@ -86,7 +86,7 @@ export const projects: Project[] = [
       "Included 3D printed mounts and enclosures for components to keep it organized and portable."
     ],
     tags: ["PenTesting", "Raspberry Pi", "Kali Linux", "3D Printing", "Cybersecurity"],
-    imageUrl: "images/pentest.jpg"
+    imageUrl: ["images/pentest.jpg","images/drum_lights.jpg","images/server.jpg"]
   },
   {
     title: "Home Lab Server Build",
@@ -100,7 +100,7 @@ export const projects: Project[] = [
       "Installed Proxmox VE to run multiple virtual machines, experimenting with virtualization, networking, and containerized workloads."
     ],
     tags: ["Homelab", "Server", "Supermicro", "Linux", "Proxmox", "Virtualization"],
-    imageUrl: "images/server.jpg"
+    imageUrl: ["images/server.jpg"]
   },
   {
     title: "3D Printed Stool Foot",
@@ -125,7 +125,7 @@ export const projects: Project[] = [
       "Controlled by Arduino for dynamic visual feedback while playing."
     ],
     tags: ["Arduino", "LED", "Sensors"],
-    imageUrl: "images/drum_lights.jpg"
+    imageUrl: ["images/drum_lights.jpg"]
   },
   {
     title: "H2Load HTTP/3 Docker Container",

@@ -1,0 +1,15 @@
+<div class="carousel-container" [ngClass]="{ expanded: expanded}">
+  <img [src]="images[currentIndex]" *ngIf="images?.length" class="carousel-image" />
+
+  <button *ngIf="images.length > 1" class="prev-btn" (click)="prev(); $event.stopPropagation()">‹</button>
+  <button *ngIf="images.length > 1" class="next-btn" (click)="next(); $event.stopPropagation()">›</button>
+
+  <div class="carousel-indicators" *ngIf="images.length > 1">
+    <span
+      *ngFor="let img of images; let i = index"
+      [class.active]="i === currentIndex"
+      (click)="currentIndex = i; $event.stopPropagation()"
+    ></span>
+  </div>
+</div>
+
