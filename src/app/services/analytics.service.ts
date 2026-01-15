@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs';
+import { Router, NavigationEnd, Event } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 declare let gtag: Function;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AnalyticsService {
   constructor(private router: Router) {
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd) => {
+      .pipe(
+        filter((event: Event): event is NavigationEnd => event instanceof NavigationEnd)
+      )
+      .subscribe((event) => {
         this.sendPageView(event.urlAfterRedirects);
       });
   }
