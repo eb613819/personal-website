@@ -86,7 +86,7 @@ export const projects: Project[] = [
       "Included 3D printed mounts and enclosures for components to keep it organized and portable."
     ],
     tags: ["PenTesting", "Raspberry Pi", "Kali Linux", "3D Printing", "Cybersecurity"],
-    imageUrl: ["images/pentest.jpg","images/drum_lights.jpg","images/server.jpg"]
+    imageUrl: ["images/pentest.jpg"]
   },
   {
     title: "Home Lab Server Build",
