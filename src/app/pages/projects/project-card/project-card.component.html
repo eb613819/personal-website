@@ -1,0 +1,104 @@
+<div class="projects-grid">
+    <div
+        *ngFor="let project of projects"
+        class="project-card"
+        [ngClass]="{ expanded: isExpanded(project) }"
+        (click)="toggleCard(project)"
+        >
+        <div class="reg-content">
+            <!-- Header -->
+            <header class="card-header">
+                <div class="type-label">
+                <span
+                    *ngFor="let t of project.types"
+                    class="type"
+                    [ngClass]="getTypeClass(t)"
+                >
+                    {{ t }}
+                </span>
+                </div>
+
+                <h3 class="project-title">{{ project.title }}</h3>
+            </header>
+
+            <!-- Image -->
+            <img
+                *ngIf="project.imageUrl"
+                [src]="project.imageUrl"
+                [alt]="project.title"
+                class="project-image"
+            />
+
+            <!-- Meta -->
+            <div class="project-meta">
+                <div class="status-wrap">
+                <span
+                    class="status"
+                    [ngClass]="project.status.toLowerCase().replace(' ', '-')"
+                    >
+                    {{ project.status }}
+                </span>
+                </div>
+
+                <div class="tags">
+                <span *ngFor="let t of project.tags" class="tag">
+                    {{ t }}
+                </span>
+                </div>
+            </div>
+        </div>
+        <!-- Expanded Content -->
+        <div class="card-description" *ngIf="isExpanded(project)" (click)="$event.stopPropagation()">
+            <ul>
+            <li *ngFor="let d of project.description">{{ d }}</li>
+            </ul>
+
+            <div class="project-actions">
+            <a *ngIf="project.github" 
+                [href]="project.github" 
+                target="_blank" 
+                class="platform-button github" 
+                (click)="$event.stopPropagation()"
+            >
+                <img src="icons/github-mark.png" alt="GitHub logo" class="platform-icon" />
+                <img src="icons/github.png" alt="GitHub logo" class="platform-icon" />
+            </a>
+
+            <a *ngIf="project.printables" 
+                [href]="project.printables" 
+                target="_blank" 
+                class="platform-button printables" 
+                (click)="$event.stopPropagation()"
+            >
+                <img src="icons/printables.svg" alt="Printables logo" class="platform-icon" />
+            </a>
+
+            <a *ngIf="project.dockerhub" 
+                [href]="project.dockerhub" 
+                target="_blank" 
+                class="platform-button dockerhub" 
+                (click)="$event.stopPropagation()"
+            >
+                <img src="icons/docker.svg" alt="DockerHub logo" class="platform-icon" />
+            </a>
+
+            <a *ngIf="project.website" 
+                [href]="project.website" 
+                target="_blank" 
+                class="platform-button website" 
+                (click)="$event.stopPropagation()"
+            >
+                Website
+            </a>
+
+            <a *ngIf="project.detailsPage"
+                [href]="project.detailsPage"
+                class="platform-button detail"
+                (click)="$event.stopPropagation();"
+            >
+                View Details →
+            </a>
+            </div>
+        </div>
+    </div>
+</div>

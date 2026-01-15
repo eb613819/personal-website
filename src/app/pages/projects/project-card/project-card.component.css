@@ -1,0 +1,206 @@
+/* ---------- grid ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  position: relative;
+  align-items: stretch;
+  grid-auto-rows: auto; 
+}
+
+/* ---------- project card ---------- */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background-color: var(--bg-card);
+}
+
+.project-card:hover {
+  transform: translateY(-3px) translateX(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* expanded*/
+.project-card.expanded {
+  grid-column: 1 / -1;
+  z-index: 10;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* left column */
+.project-card.expanded .reg-content {
+  flex: 0 0 30%;
+}
+
+/* right column */
+.project-card.expanded .card-description {
+  flex: 1;
+  width: auto;
+  margin-top: 0;
+  cursor: default;
+}
+
+/* ---------- header ---------- */
+.card-header h3,
+.card-header p {
+  margin: 0;
+}
+
+/* ---------- type ---------- */
+.type-label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.type-label .type {
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+/* ---------- tags ---------- */
+.tags {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.tag {
+  display: inline-block;
+  background-color: var(--tag-color);
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- image ---------- */
+.project-image {
+  width: 100%;
+  max-width: 400px;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin: 0.5rem 0;
+  display: block;
+}
+
+.project-card.expanded .project-image {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ---------- description ---------- */
+.card-description {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--text-secondary);
+  width: 100%;
+  height:100%;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.platform-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.platform-button img {
+  height: 1em;
+  width: auto;
+}
+
+.platform-button.github { background-color: #24292f; }
+.platform-button.dockerhub { background-color: #2496ed; }
+.platform-button.printables { background-color: #ff5f00; }
+.platform-button.website { 
+  background-color: rgba(75, 85, 99, 0.2); 
+  color: var(--text-primary);
+}
+
+.platform-button.detail {
+  background-color: var(--active-bg);
+  color: var(--accent-primary);
+}
+
+.platform-button:hover {
+  background-color: rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+/* ---------- status ---------- */
+.project-meta {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.status.completed { color: #9ca3af; }
+.status.in-progress { color: #d1a23cd7; }
+.status.not-started { color: #c26b6b; }
+
+/* ----------small screens ---------- */
+@media (max-width: 768px) {
+  .project-card.expanded {
+    flex-direction: column;
+  }
+
+  .project-card.expanded .reg-content,
+  .project-card.expanded .card-description {
+    flex: none;
+    width: 100%;
+  }
+
+  .project-card.expanded .project-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}

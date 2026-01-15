@@ -4,21 +4,21 @@ import { projects, Project, ProjectStatus, ProjectType } from '../../data/projec
 import { FilterGroup, FilterState } from '../../shared/filter-panel/filter.model';
 import { FilterPanelComponent } from '../../shared/filter-panel/filter-panel.component';
 import { Title } from '@angular/platform-browser';
+import { ProjectCardComponent } from "./project-card/project-card.component";
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, FilterPanelComponent],
+  imports: [CommonModule, FilterPanelComponent, ProjectCardComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
   projects: Project[];
-  expandedProject: Project | null = null;
 
   constructor(private titleService: Title) {
     this.titleService.setTitle('Projects | Evan Brooks Portfolio');
-    this.projects = projects.sort((a, b) => {
+    this.projects = [...projects].sort((a, b) => {
       const statusOrder = (s: Project['status']) => {
         if (s === 'Completed') return 0;
         if (s === 'In Progress') return 1;
@@ -38,22 +38,6 @@ export class ProjectsComponent {
 
       return 0;
     });
-  }
-
-  toggleCard(proj: Project) {
-    if (this.expandedProject === proj) {
-      this.expandedProject = null; 
-    } else {
-      this.expandedProject = proj; 
-    }
-  }
-
-  isExpanded(proj: Project): boolean {
-    return this.expandedProject === proj;
-  }
-
-  getTypeClass(type: string): string {
-    return 'type-' + type.toLowerCase().replace(/[\s]/g, '').replace(/[\s\/]/g, '-');
   }
 
   //Filter logic
