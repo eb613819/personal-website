@@ -12,7 +12,15 @@ export class AppComponent {
   constructor(private analytics: AnalyticsService) {}
   
   title = 'personal_website';
+  menuOpen = false;
 
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+  }
   
   onClickDownloadResume() {
     this.analytics.sendEvent('resume_download', {

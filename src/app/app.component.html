@@ -1,10 +1,13 @@
 <nav class="navbar">
   <div class="nav-container">
-    <a routerLink="/" class="nav-left">
-      <img src="favicon.png" alt="EB logo" class="nav-logo" />
-      <span class="nav-brand">Evan Brooks</span>
-    </a>
-    <div class="nav-right">
+      <div class="mobile-top-bar" [class.menu-open]="menuOpen">
+        <a routerLink="/" class="nav-left">
+          <img src="favicon.png" alt="EB logo" class="nav-logo" />
+          <span class="nav-brand">Evan Brooks</span>
+        </a>
+        <button class="hamburger" (click)="toggleMenu()">☰</button>
+      </div>
+    <div class="nav-right" [class.open]="menuOpen">
       <div>
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
         <a routerLink="/projects" routerLinkActive="active">Projects</a>
