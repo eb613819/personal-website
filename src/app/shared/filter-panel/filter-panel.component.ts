@@ -18,6 +18,13 @@ export class FilterPanelComponent {
 
   collapsed = false;
   
+  ngOnInit() {
+    //Collapse on small screens by default
+    if (window.innerWidth <= 768) {
+      this.collapsed = true;
+    }
+  }
+
   toggle(groupKey: string, value: string) {
     const current: string[] = this.state[groupKey] ?? [];
 
