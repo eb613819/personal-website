@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterModule } from '@angular/router';
 import { AnalyticsService } from './services/analytics.service';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink,RouterModule],
+  imports: [RouterOutlet, RouterLink, RouterModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

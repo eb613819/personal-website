@@ -2,8 +2,8 @@
   <div class="nav-container">
       <div class="mobile-top-bar" [class.menu-open]="menuOpen">
         <a routerLink="/" class="nav-left">
-          <img src="favicon.png" alt="EB logo" class="nav-logo" />
-          <span class="nav-brand">Evan Brooks</span>
+          <img src="favicon.png" alt="EB logo" class="nav-logo" (click)="closeMenu()"/>
+          <span class="nav-brand" (click)="closeMenu()">Evan Brooks</span>
         </a>
         <button class="hamburger" (click)="toggleMenu()">☰</button>
       </div>
@@ -19,5 +19,5 @@
     </div>
   </div>
 </nav>
-
+<div class="menu-overlay" *ngIf="menuOpen" (click)="closeMenu(); $event.stopPropagation()"></div>
 <router-outlet />
