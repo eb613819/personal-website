@@ -23,6 +23,11 @@
         <div class="tags">
           <span *ngFor="let t of exp.tags" class="tag">{{ t }}</span>
         </div>
+        <span class="expand-hint" [class.expanded]="isExpanded(exp)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 12 12">
+            <polygon points="0,0 12,0 0,12" fill="currentColor"/>
+          </svg>
+        </span>
       </div>
     </div>
     <footer class="site-footer">
