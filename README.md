@@ -2,7 +2,7 @@
 
 This repository contains the source code for my personal portfolio website.
 
-> [Live Site](evanbrooks.me)
+> [Live Site](https://evanbrooks.me)
 
 The site highlights selected projects, technical experience, and hands-on work across software development, infrastructure, electronics, and fabrication. It provides an overview of my skills, interests, and the types of problems I enjoy solving.
 
