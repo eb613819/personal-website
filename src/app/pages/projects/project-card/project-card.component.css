@@ -176,6 +176,7 @@
   display: flex;
   transform-origin: bottom right;
   transform: rotate(180deg) translate(3px, 3px);
+  transition: background-color 0.2s;
 }
 
 .project-card:hover .expand-hint {

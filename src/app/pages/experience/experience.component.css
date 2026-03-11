@@ -10,6 +10,7 @@
   box-shadow: var(--shadow-md);
   color: var(--text-primary);
   box-sizing: border-box;
+  position: relative;
 }
 
 .experience-card:hover {
@@ -83,6 +84,24 @@
   background-color: var(--tag-color);
   color: var(--text-secondary);
   font-weight: 500;
+}
+
+.expand-hint {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  color: var(--text-muted);
+  display: flex;
+  transform-origin: bottom right;
+  transform: rotate(180deg) translate(20px, 20px);
+  transition: transform 0.3s, background-color 0.2s;
+}
+.experience-card:hover .expand-hint {
+  color: var(--accent-primary);
+}
+
+.expand-hint.expanded {
+  transform: rotate(0deg) translate(10px, 10px);
 }
 
 /* ---------- Card Description ---------- */
